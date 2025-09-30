@@ -1,1 +1,214 @@
-kk
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lời mời cà phê</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    /* ===== Body & Nền ===== */
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #ffffff url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e') no-repeat center center fixed;
+      background-size: cover;
+      color: #000;
+      text-align: center;
+      padding: 40px 20px;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(255,255,255,0.75);
+      z-index: 1;
+    }
+
+    /* ===== Container chính ===== */
+    .container {
+      position: relative;
+      z-index: 2;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      padding: 35px 30px;
+      border-radius: 20px;
+      max-width: 600px;
+      margin: auto;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+      animation: fadeIn 1.5s ease;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+
+    /* ===== Tiêu đề & Text ===== */
+    h1 {
+      font-size: 2em;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .typing {
+      display: inline-block;
+      border-right: 3px solid #ff9eb5;
+      white-space: nowrap;
+      overflow: hidden;
+      font-size: 1.25em;
+      font-weight: 500;
+      animation: typing 3s steps(40, end), blink .75s step-end infinite;
+      margin-bottom: 15px;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink {
+      from, to { border-color: transparent }
+      50% { border-color: #ff9eb5 }
+    }
+
+    p {
+      font-size: 1.1em;
+      margin: 10px 0 20px;
+      line-height: 1.5;
+    }
+
+    /* ===== Form ===== */
+    form {
+      text-align: left;
+      margin-top: 15px;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+      font-size: 1em;
+      font-weight: 500;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid #ccc;
+      font-size: 1em;
+      margin-bottom: 12px;
+      transition: box-shadow 0.3s, border-color 0.3s;
+    }
+
+    input:focus, select:focus {
+      outline: none;
+      box-shadow: 0 0 10px #87cefa;
+      border-color: #87cefa;
+    }
+
+    /* ===== Nút bấm ===== */
+    button {
+      display: block;
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 25px;
+      background: linear-gradient(90deg, #87cefa, #ff9eb5);
+      font-size: 1.1em;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.3s;
+      margin-top: 15px;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(135, 206, 250, 0.6);
+    }
+
+    /* ===== Hiệu ứng rơi hoa ===== */
+    .petal {
+      position: absolute;
+      top: -50px;
+      width: 20px;
+      height: 20px;
+      background: #ffb6c1;
+      border-radius: 50%;
+      opacity: 0.7;
+      animation: fall 12s linear infinite;
+      z-index: 0;
+    }
+
+    .petal:nth-child(1) { left: 15%; animation-duration: 9s; }
+    .petal:nth-child(2) { left: 40%; animation-duration: 11s; background:#87cefa; }
+    .petal:nth-child(3) { left: 70%; animation-duration: 13s; }
+    .petal:nth-child(4) { left: 85%; animation-duration: 12s; background:#87cefa; }
+
+    @keyframes fall {
+      0% { transform: translateY(0) rotate(0deg); }
+      100% { transform: translateY(120vh) rotate(360deg); }
+    }
+
+    /* ===== Chó giữa 2 dòng ===== */
+    .dog-inline {
+      margin: 15px 0;
+    }
+    .dog-inline img {
+      max-width: 120px;
+      border-radius: 12px;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+      transition: transform 0.5s ease;
+    }
+    .dog-inline img:hover {
+      transform: translateY(-5px);
+    }
+  </style>
+</head>
+<body>
+  <div class="overlay"></div>
+
+  <!-- Petals pastel -->
+  <div class="petal"></div>
+  <div class="petal"></div>
+  <div class="petal"></div>
+  <div class="petal"></div>
+
+  <div class="container">
+    <h1>💌 Gửi: Thanh Trúc</h1>
+
+    <p class="typing">Em là Mai, mời Trúc đi cà phê cùng em ☕</p>
+
+    <!-- Chèn hình chó giữa 2 dòng -->
+    <div class="dog-inline">
+      <img src="hinh-con-chó.jpg" alt="Chó dễ thương">
+    </div>
+
+    <p>Vì em nhớ Trúc 🌸💖</p>
+
+    <form onsubmit="submitForm(event)">
+      <label for="time">⏰ Chọn thời gian:</label>
+      <input type="datetime-local" id="time" name="time" required>
+
+      <label for="place">🏠 Chọn quán cà phê:</label>
+      <select id="place" name="place" required>
+        <option value="Mận Đào">Mận Đào</option>
+        <option value="Zen">Zen</option>
+        <option value="Xóm Mơ">Xóm Mơ</option>
+      </select>
+
+      <button type="submit">✨ Xác nhận lời mời ✨</button>
+    </form>
+  </div>
+
+  <script>
+    function submitForm(event) {
+      event.preventDefault();
+      const time = document.getElementById("time").value;
+      const place = document.getElementById("place").value;
+      alert(`🌟 Trúc đã chọn: ${place} vào lúc ${time}. Em vui lắm 💕`);
+    }
+  </script>
+</body>
+</html>
